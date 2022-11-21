@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root to: 'dogs#index'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :dogs do
+    resources :bookings, only: %i[new create]
+  end
+  resources :users, only: %i[show]
+  resources :bookings, only: %i[edit update]
 end
