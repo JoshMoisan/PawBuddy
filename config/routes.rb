@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'dogs/index'
+  get 'dogs/show'
+  get 'dogs/new'
+  get 'dogs/create'
+  get 'dogs/edit'
+  get 'dogs/update'
   devise_for :users
   root to: 'dogs#index'
 
