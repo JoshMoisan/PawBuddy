@@ -20,6 +20,8 @@ gem "jsbundling-rails"
 
 gem "devise"
 
+gem "pundit"
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
