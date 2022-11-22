@@ -1,6 +1,12 @@
-<h1>Dogs#show</h1>
-<p>Find me in app/views/dogs/show.html.erb</p>
+<div class="container">
 
-<%# ADD DOG PHOTO %>
+  <h1>I welcome you to <strong><%= @dog.name %></strong></h1>
+  <h3> <%= @dog.breed %></h3>
+  <p><%= @dog.description %></p>
 
-<%= link_to "Edit", edit_dog_path %>
+  <%# ADD DOG PHOTO %>
+
+  <%= link_to "Edit", edit_dog_path %>
+  <%= link_to "Back", :back %>
+
+</div>

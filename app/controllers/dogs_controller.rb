@@ -25,9 +25,9 @@ class DogsController < ApplicationController
     @dog.user = current_user
     if @dog.save
     # redirect to dog_path(@dog)
-    redirect_to user_path(current_user)
+    redirect_to dog_path(@dog)
    else
-    render :new, status: :unprecessable_entity
+    # render :new, status: :unprecessable_entity
    end
   end
 

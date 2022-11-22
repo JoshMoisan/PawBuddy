@@ -1,6 +1,16 @@
 <div class="container">
 
-  <h1>Dogs#index</h1>
+  <h1>Welcome to PawBuddy</h1>
   <p>Pick a dog</p>
   <%= link_to "Add your dog", new_dog_path %>
+
+    <ul>
+    <li><% @dogs.each do |dog| %>
+     <%= link_to dog.name, dog_path(dog)  %>
+     <% end %>
+    </li>
+  </ul>
+
 </div>
+
+
