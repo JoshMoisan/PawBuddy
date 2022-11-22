@@ -1,5 +1,7 @@
 class DogsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  # before_action :configure_permitted_parameters, if: :devise_controller?
+  skip_before_action :authenticate_user!, only: [:show, :index]
+  # before_action :set_dog, only: [:show, :edit, :update, :destroy, :new, :create]
 
 
   def index
@@ -11,13 +13,19 @@ class DogsController < ApplicationController
   end
 
   def new
-    @dog = Dog.new
+    if current_user
+      @dog = Dog.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
     @dog = Dog.new(dog_params)
+    @dog.user = current_user
     if @dog.save
-      redirect to users_show_path(current_user)
+    # redirect to dog_path(@dog)
+    redirect_to user_path(current_user)
    else
     render :new, status: :unprecessable_entity
    end
