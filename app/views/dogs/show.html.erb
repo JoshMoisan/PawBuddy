@@ -1,12 +1,21 @@
 <div class="container">
+  <div class="container-name">
+    <h1>Hi 👋🏻, my name is <strong><%= @dog.name %></strong></h1>
+  </div>
+  <div class="card-dog" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://scontent-mad1-1.xx.fbcdn.net/v/t39.30808-6/308566167_457316266442747_5820799447073941001_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=e3f864&_nc_ohc=BT6wtU8o-GgAX_P9WBO&_nc_ht=scontent-mad1-1.xx&oh=00_AfAn7VxFUZ_dhtWwzmz8ROTa8AeoBXTQjDYwpGkaAdh-Fw&oe=6382D059)">
+    <h2> <%= @dog.breed %></h3>
+    <p><%= @dog.description %></p>
+  </div>
 
-  <h1>I welcome you to <strong><%= @dog.name %></strong></h1>
-  <h3> <%= @dog.breed %></h3>
-  <p><%= @dog.description %></p>
+  <img src="<%= @dog.dog_image %>" alt="dog_image">
 
-  <%# ADD DOG PHOTO %>
+
+
+  <%= link_to :back do %>
+    <i class="fa-solid fa-circle-chevron-left"></i>
+  <% end %> |
 
   <%= link_to "Edit", edit_dog_path %>
-  <%= link_to "Back", :back %>
+
 
 </div>
