@@ -12,10 +12,10 @@
   text-decoration: none;
 }
 
-.option a:hover {
-    background-color: #E6963A ;
-    color: white;
-}
+// option a:hover {
+//   font-weight: bolder;
+//   transition: all .5s;
+// }
 
 
 .card-product {
@@ -58,6 +58,8 @@
 .card-product-infos {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 }
 
 
