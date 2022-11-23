@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show new create]
   skip_after_action :verify_policy_scoped, only: :index
   before_action :set_dog, only: %i[new create show]
-  before_action :set_booking, only: %i[create show edit update]
 
   def index
     @bookings = Booking.where(user: current_user)
@@ -20,11 +19,12 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
     authorize @booking
-    @booking.dog = Dog.find(params[:dog_id])
+    @booking.user = current_user
+    @booking.dog = @dog
+    @booking.status = "pending"
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to user_path(current_user)
     else
       redirect_to dog_path(@dog)
     end
@@ -35,10 +35,6 @@ class BookingsController < ApplicationController
 
 
   private
-
-  def set_booking
-    @booking = Booking.find(params[:id])
-  end
 
   def set_dog
     @dog = Dog.find(params[:dog_id])

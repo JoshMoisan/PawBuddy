@@ -10,16 +10,16 @@
 
         <div class="btn-ghost-black" >
           <%= link_to "Back", root_path  %>
-          <% if policy(@dog).edit? %>
-          <% end %>
         </div>
+          
+        <% if policy(@dog).edit? %>
+          <div class="btn-ghost-black" >
+            <%= link_to "Edit", edit_dog_path %>
+          </div>
+        <% end %>
 
         <div class="btn-ghost-black" >
-          <%= link_to "Edit", edit_dog_path %>
-        </div>
-
-        <div class="btn-ghost-black" >
-          <%= link_to "Delete", dogs_path %>
+          <%= link_to "Delete", dog_path(@dog), data: {turbo_method: :delete} %>
         </div>
 
       </div>
