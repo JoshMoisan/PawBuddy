@@ -13,6 +13,24 @@
 
 .menu {
   width: 25px;
-  margin: 5px;
+  margin-top: 10px;
   vertical-align: bottom;
+}
+
+
+.hover-btn:hover{
+  background-color: #e6963a ;
+  color: white !important;
+}
+
+.hover-btn a:hover{
+  color: white;
+}
+
+
+.private-area{
+  border-top:2px solid rgb(78, 76, 76);
+  margin: 5px 0px;
+  height: 1px;
+  width: 100%;
 }
