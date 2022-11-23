@@ -9,8 +9,9 @@
 
 // Your CSS partials
 @import "components/index";
-@import "components/navbar";
-@import "components/banner";
+
+
+// Your CSS pages
+@import "pages/home";
 @import "pages/index";
-@import "components/index_grid";
-@import "components/button";
+@import "pages/show"
