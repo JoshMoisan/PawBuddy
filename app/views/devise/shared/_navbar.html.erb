@@ -28,14 +28,14 @@
                 <%= link_to "Add your dog", "/dogs/new", class: "dropdown-item hover-btn" %>
                 <%= link_to "Favorites", "#", class: "dropdown-item hover-btn" %>
                 <div class="private-area"></div>
-                <%= link_to "Your account", "#", class: "dropdown-item hover-btn" %>
-                <%= link_to "Help", "#", class: "dropdown-item hover-btn" %>
+                <%= link_to "Your account", user_path(current_user), class: "dropdown-item hover-btn" %>
+                <%= link_to "Help","#" , class: "dropdown-item hover-btn" %>
                 <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item hover-btn", data: {turbo_method: :delete} %>
               </div>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+              <%= link_to "Login", new_user_session_path, class: "nav-link hover-btn" %>
             </li>
           <%end %>
         </ul>

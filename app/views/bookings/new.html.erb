@@ -1,2 +1,10 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<div class="container">
+  <div class="form-container">
+    <h1>New Booking</h1>
+    <%= simple_form_for [@dog, @booking] do |f| %>
+      <%= f.input :start_date, as: :date, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :date, required: false, input_html: {class: "datepicker"} %>
+      <%= f.submit "Request to book", class: "btn btn-danger form-control" %>
+    <% end %>
+  </div>
+</div>
