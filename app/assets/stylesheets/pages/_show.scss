@@ -5,18 +5,16 @@
   align-items: center;
   align-content: center;
   padding: 10px 5px;
+
 }
 
 .options a {
   text-decoration: none;
-  border: 2px solid black;
-  padding: 1px 10px;
-  color: black;
 }
 
-option a:hover {
-  font-weight: bolder;
-  transition: all .5s;
+.option a:hover {
+    background-color: #E6963A ;
+    color: white;
 }
 
 

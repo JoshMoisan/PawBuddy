@@ -1,25 +1,29 @@
 <div class="container">
-
-
   <div class="card-product">
     <h1>Hi 👋🏻, my name is <strong><%= @dog.name %></strong></h1>
+
     <div class="card-box">
       <img src="https://thumbs.dreamstime.com/b/beautiful-happy-reddish-havanese-puppy-dog-sitting-frontal-looking-camera-isolated-white-background-46868560.jpg" alt="dog_image">
+
       <div class="card-product-infos">
         <p><%= @dog.description %></p>
-        <div class="options">
+
+        <div class="btn-ghost-black" >
           <%= link_to "Back", root_path  %>
-          <% if policy(@dog).edit? %>
-            <%= link_to "Edit", edit_dog_path %>
-            <%= link_to "Book", new_dog_booking_path(@dog) %>
-            <%= button_to "Delete", @dog, method: :delete %>
-          <% end %>
         </div>
+          
+        <% if policy(@dog).edit? %>
+          <div class="btn-ghost-black" >
+            <%= link_to "Edit", edit_dog_path %>
+          </div>
+        <% end %>
+
+        <div class="btn-ghost-black" >
+          <%= link_to "Delete", dog_path(@dog), data: {turbo_method: :delete} %>
+        </div>
+
       </div>
+
     </div>
   </div>
-
-
-
-
 </div>
