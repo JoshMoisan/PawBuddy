@@ -4,15 +4,17 @@
 
       <ul>
         <% Booking.all.each do |booking| %>
-          <div class="card-product">
-            <li><h3><%= booking.dog.name %></h3></li>
-            <div class="card-box">
-                <img src="https://thumbs.dreamstime.com/b/beautiful-happy-reddish-havanese-puppy-dog-sitting-frontal-looking-camera-isolated-white-background-46868560.jpg" alt="dog_image">
-                <div>
-                  <li><i class="fa-solid fa-calendar-days"></i> From: <%= booking.start_date %></li>
-                  <li><i class="fa-solid fa-calendar-days"></i> To: <%= booking.end_date %></li>
-                </div>
+          <% if current_user == booking.user %>
+            <div class="card-product">
+              <li><h3><%= booking.dog.name %></h3></li>
+              <div class="card-box">
+                  <img src="https://thumbs.dreamstime.com/b/beautiful-happy-reddish-havanese-puppy-dog-sitting-frontal-looking-camera-isolated-white-background-46868560.jpg" alt="dog_image">
+                  <div>
+                    <li><i class="fa-solid fa-calendar-days"></i> From: <%= booking.start_date %></li>
+                    <li><i class="fa-solid fa-calendar-days"></i> To: <%= booking.end_date %></li>
+                  </div>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </ul>
