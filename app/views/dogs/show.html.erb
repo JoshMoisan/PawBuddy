@@ -8,10 +8,16 @@
       <div class="card-product-infos">
         <p><%= @dog.description %></p>
         <div class="options">
-          <%= link_to "Back", root_path  %>
+        <div class="btn-ghost-black" >
+         <%= link_to "Back", root_path  %>
           <% if policy(@dog).edit? %>
+          </div>
+          <div class="btn-ghost-black" >
             <%= link_to "Edit", edit_dog_path %>
-            <%= button_to "Delete", @dog, method: :delete %>
+            </div>
+            <div class="btn-ghost-black" >
+            <%= link_to "Delete", @dog, method: :delete %>
+            </div>
           <% end %>
         </div>
       </div>

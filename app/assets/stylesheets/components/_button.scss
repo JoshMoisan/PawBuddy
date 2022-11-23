@@ -34,3 +34,13 @@ color: white;
 border: none;
 transition-duration: 0.5s;
 }
+
+
+.btn-ghost-black {
+  color: black;
+  border: 1px solid black;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  }
