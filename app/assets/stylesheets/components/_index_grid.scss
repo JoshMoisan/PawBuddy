@@ -1,0 +1,45 @@
+.card-list a {
+  text-decoration: none;
+  background: #ABD3DC;
+  border-radius: 4px;
+  color: white;
+  padding: 15px;
+  font-weight: 300;
+  font-size: 24px;
+  width: 200px;
+  height: 200px;
+  font-family: 'News Cycle', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  z-index: 0;
+ }
+
+ .card-list a:hover {
+ background-color: #469487;
+ border-radius: 8px;
+ box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+ scale: 1.5;
+ transition-duration: 1s;
+ background-size: cover;
+ z-index: 100;
+
+
+ }
+
+ .card-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+ }
+
+  ul {
+    padding-left: 0px;
+    list-style-type: none;
+  }

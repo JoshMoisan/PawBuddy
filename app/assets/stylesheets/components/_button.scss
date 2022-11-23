@@ -1,0 +1,36 @@
+.search-bar {
+  display: flex;
+  background-color: #EFC55D;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.btn-ghost {
+color: white;
+border: 1px solid white;
+padding: 8px 24px;
+border-radius: 50px;
+font-weight: lighter;
+transition: opacity 0.3s ease;
+}
+
+.search-bar h2 {
+color: white;
+font-weight: bold;
+}
+
+
+.btn-ghost a {
+text-decoration: none;
+color: white;
+}
+
+.btn-ghost:hover {
+border: none;
+transition-duration: 0.5s;
+}

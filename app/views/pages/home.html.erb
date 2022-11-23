@@ -1,6 +1,19 @@
 <div class="container">
+<%= render "devise/shared/banner" %>
 
-  <h1>Dogs#index</h1>
-  <p>Pick a dog</p>
+<div class="search-bar">
+  <h2>Pick your buddy !</h2>
+  <div class="btn btn-ghost">
   <%= link_to "Add your dog", new_dog_path %>
+  </div>
+</div>
+
+    <ul>
+      <li class="card-list"><% @dogs.each do |dog| %>
+
+        <%= link_to dog.name, dog_path(dog)  %>
+      <% end %>
+      </li>
+  </ul>
+
 </div>

@@ -10,11 +10,13 @@ class DogsController < ApplicationController
 
   def show
     @dog = Dog.find(params[:id])
+    authorize(@dog)
   end
 
   def new
     if current_user
       @dog = Dog.new
+      authorize(@dog)
     else
       redirect_to new_user_session_path
     end
@@ -23,26 +25,35 @@ class DogsController < ApplicationController
   def create
     @dog = Dog.new(dog_params)
     @dog.user = current_user
+    authorize(@dog)
     if @dog.save
     # redirect to dog_path(@dog)
-    redirect_to user_path(current_user)
+    redirect_to dog_path(@dog)
    else
-    render :new, status: :unprecessable_entity
+    # render :new, status: :unprecessable_entity
    end
   end
 
   def edit
     @dog = Dog.find(params[:id])
+    authorize(@dog)
   end
 
   def update
     @dog = Dog.find(params[:id])
-    @dog.update(dog_params)
+    authorize(@dog)
+    if @dog.update(dog_params)
+      redirect_to @dog, notice: "Dog was successfully updated"
+    else
+      # render :edit, status :unprecessable_entity
+    end
   end
 
   def destroy
+    @dog = Dog.find(params[:id])
+    authorize(@dog)
     @dog.destroy
-    redirect to users_show_path(current_user)
+    redirect_to root_path
   end
 
   private
