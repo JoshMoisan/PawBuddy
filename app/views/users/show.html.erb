@@ -3,9 +3,15 @@
   <p>Here is your past activty</p>
 
 
-  <p> USER PPROFILE OPTION IN STANDBY</p>
 
 
 
 
-</div>
+      <ul>
+        <% Booking.all.each do |booking| %>
+        
+          <li><h3><%= booking.dog_id %></h3></li>
+          <li><%= booking.start_date %></li>
+          <li><%= booking.end_date %></li>
+          <% end %>
+      </ul>

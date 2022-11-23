@@ -11,6 +11,7 @@
           <%= link_to "Back", root_path  %>
           <% if policy(@dog).edit? %>
             <%= link_to "Edit", edit_dog_path %>
+            <%= link_to "Book", new_dog_booking_path(@dog) %>
             <%= button_to "Delete", @dog, method: :delete %>
           <% end %>
         </div>
