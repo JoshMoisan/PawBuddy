@@ -1,16 +1,30 @@
 <div class="container">
-<%= render "devise/shared/banner" %>
+  <%= render "devise/shared/banner" %>
 
-<div class="search-bar">
-  <h2>Pick your buddy !</h2>
-  <div class="btn btn-ghost">
-  <%= link_to "Add your dog", new_dog_path %>
+  <div class="lower-nav-bar">
+    <h2>Pick your buddy !</h2>
+
+    <div class="search-bar">
+    <div class="search-bar-element">
+      <%= form_with url: root_path, method: :get do%>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Type a name or a breed"
+        %>
+      </div>
+      <div class="search-bar-element">
+        <%= submit_tag "Search", class: "btn btn-ghost" %>
+      </div>
+      <div class="search-bar-element">
+        <button class="btn btn-ghost">Map</button>
+      </div>
+        <% end %>
+    </div>
   </div>
-</div>
 
     <ul>
       <li class="card-list"><% @dogs.each do |dog| %>
-
         <%= link_to dog.name, dog_path(dog)  %>
       <% end %>
       </li>
