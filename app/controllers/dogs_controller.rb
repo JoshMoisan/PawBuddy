@@ -1,8 +1,5 @@
 class DogsController < ApplicationController
-  # before_action :configure_permitted_parameters, if: :devise_controller?
   skip_before_action :authenticate_user!, only: [:show, :index]
-  # before_action :set_dog, only: [:show, :edit, :update, :destroy, :new, :create]
-
 
   def index
     @dogs = policy_scope(Dog)
@@ -27,11 +24,10 @@ class DogsController < ApplicationController
     @dog.user = current_user
     authorize(@dog)
     if @dog.save
-    # redirect to dog_path(@dog)
-    redirect_to dog_path(@dog)
-   else
-    # render :new, status: :unprecessable_entity
-   end
+      redirect_to dog_path(@dog)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -63,6 +59,6 @@ class DogsController < ApplicationController
   end
 
   def dog_params
-    params.require(:dog).permit(:name, :breed, :description)
+    params.require(:dog).permit(:name, :breed, :description, :photo)
   end
 end
