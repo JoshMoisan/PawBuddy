@@ -3,7 +3,6 @@ class DogsController < ApplicationController
 
   def index
     @dogs = policy_scope(Dog)
-    
   end
 
   def show
@@ -25,11 +24,10 @@ class DogsController < ApplicationController
     @dog.user = current_user
     authorize(@dog)
     if @dog.save
-    # redirect to dog_path(@dog)
-    redirect_to dog_path(@dog)
-   else
+      redirect_to dog_path(@dog)
+    else
     # render :new, status: :unprecessable_entity
-   end
+    end
   end
 
   def edit
