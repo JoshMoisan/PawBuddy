@@ -5,7 +5,14 @@ ruby "3.1.2"
 
 
 #Cloudinary
+gem "cloudinary"
+
+#dotenv-rails
 gem "dotenv-rails", groups: [:development, :test]
+
+#Open-uri to make cloudinary seeds
+gem 'open-uri'
+
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
