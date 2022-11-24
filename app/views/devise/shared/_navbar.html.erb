@@ -1,27 +1,20 @@
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <div class="container-fluid" style="<%= "justify-content: flex-end;" if !user_signed_in? %>">
       <% if user_signed_in? %>
-        <%= link_to "#", class: "navbar-brand" do %>
-          <%= image_tag "https://images.assetsdelivery.com/compings_v2/warrengoldswain/warrengoldswain1309/warrengoldswain130900153.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% end %>
+          <%= image_tag "https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg", class: "avatar" %>
       <% end %>
 
-      <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button> %>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
+        <ul class="navbar-nav">
           <% if user_signed_in? %>
             <li class="nav-item active hover-btn">
-
             <%= link_to "Home", root_path, class: "nav-link" %>
-
             </li>
 
             <li class="nav-item dropdown">
 
-              <%= image_tag "menu.png", class: "menu dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag "menu.png", class: "menu-dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Messages", "#", class: "dropdown-item hover-btn" %>
                 <%= link_to "Bookings", "#", class: "dropdown-item hover-btn" %>

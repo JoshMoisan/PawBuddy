@@ -21,7 +21,7 @@ transition: opacity 0.3s ease;
 
 
 .btn-ghost:hover {
-  border: none;
+  border: 1px solid #E5973A;
   background-color: #E5973A;
   transition-duration: 0.5s;
   }
@@ -37,9 +37,6 @@ text-decoration: none;
 color: white;
 }
 
-
-
-
 .btn-ghost-black {
   color: black;
   border: 1px solid black;
@@ -48,15 +45,20 @@ color: white;
   font-weight: lighter;
   transition: opacity 0.3s ease;
   text-decoration: none;
+  max-width: 250px;
 
   }
 
-  .btn-ghost-black:hover {
-    border: black;
-    background-color: #E5973A;
-    color: white;
-    transition-duration: 0.5s;
-    z-index: 10;
+.btn-ghost-black:hover {
+  border: 1px solid #E5973A;
+  background-color: #E5973A;
+  color: white;
+  transition-duration: 0.5s;
+  z-index: 10;
 
+  }
 
-    }
+.btn-ghost-black a {
+  text-decoration: none;
+  color: white;
+  }
