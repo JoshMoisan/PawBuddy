@@ -1,16 +1,82 @@
-.options {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-start;
+
+.card-product h1{
+  align-self: baseline;
+  margin-top: 35px;
+  margin-left: 25px;
+}
+
+
+.card-product {
+  width: 800px;
+  margin-top: 25px;
+  overflow: hidden;
+  height: auto;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
-  align-content: center;
-  padding: 10px 5px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.card-product:hover {
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  transition: all .5s;
 
 }
 
-.options a {
-  text-decoration: none;
+.card-product img {
+  border-radius: 50%;
+  height: 100%;
+  width: 200px;
+  margin-top: 15px;
+  object-fit: fill;
 }
+
+
+.card-product-infos p {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 25px;
+  color: orange;
+}
+
+
+.card-product .card-product-infos {
+  padding: 16px;
+  align-items: center;
+  margin: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.card-product .card-box {
+  display: flex;
+  align-self: baseline;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dist-buttons {
+  position: relative;
+  margin: 40px 0px;
+  margin-top: 70px;
+  align-self: baseline;
+}
+
+// .container .text{
+//   overflow: hidden;
+// }
+
+
+// .options a {
+//   text-decoration: none;
+// }
 
 // option a:hover {
 //   font-weight: bolder;
@@ -18,61 +84,17 @@
 // }
 
 
-.card-product {
-  margin: 25px 0px;
-  padding: 10px;
-  overflow: hidden;
-  height: 300px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  align-items: center;
-  border-radius: 4px;
-}
-
-.card-product:hover {
-  box-shadow: 0 0 30px rgba(0,0,0,0.4);
-  transition: all .5s;
-}
-
-.card-product img {
-  border-radius: 50%;
-  height: 100%;
-  width: 200px;
-  object-fit: cover;
-}
-
 // .card-product h2 {
 //   font-size: 24px;
 //   font-weight: bold;
 //   margin: 0;
 // }
 
-.card-product p {
-  font-size: 16px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product-infos {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-}
-
-
-.card-product .card-product-infos {
-  padding: 16px;
-}
-
-
-.card-box {
-  display: flex;
-  align-content: center;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-  flex-direction: row;
-}
+// .options {
+//   display: flex;
+//   flex-direction: row-reverse;
+//   justify-content: flex-start;
+//   align-items: center;
+//   align-content: center;
+//   padding: 10px 5px;
+// }
