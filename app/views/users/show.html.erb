@@ -2,10 +2,24 @@
   <h1>Hello <%= current_user.first_name %></h1>
   <p>Here is your past activty</p>
 
-
-  <p> USER PPROFILE OPTION IN STANDBY</p>
-
-
-
-
-</div>
+      <ul>
+        <% Booking.all.each do |booking| %>
+          <% if current_user == booking.user || current_user == booking.dog.user %>
+            <div class="card-product">
+              <li><h3><%= booking.dog.name %></h3></li>
+              <div class="card-box">
+                  <img src="https://thumbs.dreamstime.com/b/beautiful-happy-reddish-havanese-puppy-dog-sitting-frontal-looking-camera-isolated-white-background-46868560.jpg" alt="dog_image">
+                  <div>
+                    <li><i class="fa-solid fa-calendar-days"></i> From: <%= booking.start_date %></li>
+                    <li><i class="fa-solid fa-calendar-days"></i> To: <%= booking.end_date %></li>
+                    <% if booking.status == "Pending 🌕" && current_user == booking.dog.user %>
+                    <li><%= link_to "Accept", booking_path(booking, status: "Accepted 🟢"), data: {turbo_method: :patch} %></li>
+                    <li><%= link_to "Reject", booking_path(booking, status: "Rejected 🔴"), data: {turbo_method: :patch} %></li>
+                    <% end %>
+                    <%= booking.status %>
+                  </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </ul>

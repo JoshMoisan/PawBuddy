@@ -1,9 +1,9 @@
-class DogPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
-    def resolve
-      scope.all
-    end
+    # def resolve
+    #   scope.all
+    # end
   end
 
   def show?
@@ -23,11 +23,10 @@ class DogPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    true
   end
 
   def destroy?
-    record.user == user
+    record.user_id == user.id
   end
-
 end

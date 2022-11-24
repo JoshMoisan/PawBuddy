@@ -1,11 +1,9 @@
 class DogsController < ApplicationController
-  # before_action :configure_permitted_parameters, if: :devise_controller?
   skip_before_action :authenticate_user!, only: [:show, :index]
-  # before_action :set_dog, only: [:show, :edit, :update, :destroy, :new, :create]
-
 
   def index
-    @dogs = Dog.all
+    @dogs = policy_scope(Dog)
+    
   end
 
   def show
@@ -63,7 +61,6 @@ class DogsController < ApplicationController
   end
 
   def dog_params
-    params.require(:dog).permit(:name, :breed, :description)
+    params.require(:dog).permit(:name, :breed, :description, :photo)
   end
-
 end
