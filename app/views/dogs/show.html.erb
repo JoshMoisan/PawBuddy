@@ -7,9 +7,8 @@
     <p><%= @dog.description %></p>
   </div>
 
-  <img src="<%= @dog.dog_image %>" alt="dog_image">
-
-
+  <%# <img src="<%= @dog.dog_image %>" alt="dog_image"> %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 
   <%= link_to root_path do %>
     <i class="fa-solid fa-circle-chevron-left"></i>
