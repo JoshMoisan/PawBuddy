@@ -4,7 +4,7 @@
     <%= simple_form_for [@dog, @booking] do |f| %>
       <%= f.input :start_date, as: :date, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :end_date, as: :date, required: false, input_html: {class: "datepicker"} %>
-      <%= f.submit "Request to book", class: "btn btn-danger form-control" %>
+      <%= f.submit "Request to book", class: "btn btn-ghost-black form-control" %>
     <% end %>
   </div>
 </div>

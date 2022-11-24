@@ -27,7 +27,7 @@
 <%# DOG CARD %>
     <ul>
       <li class="card-list"><% @dogs.each do |dog| %>
-        <p data-action="click->show-glass-card#activate" data-name="<%= dog.name %>"><%= dog.name %></p>
+        <p data-action="click->show-glass-card#activate" data-name="<%= dog.name %>", data-description="<%= dog.description %>", data-breed="<%= dog.breed %>", data-dog-image="<%= dog.dog_image %>" ><%= dog.name %></p>
       <% end %>
       </li>
     </ul>
@@ -36,7 +36,7 @@
 <%# GLASS CARD %>
   <div class="glass-card" id="glass-card" data-show-glass-card-target="card">
     <div class="glass-header">
-      <div class="glass-title"><h2 data-show-glass-card-target="title">Hello</h2></div>
+      <div class="glass-title"><h2 data-show-glass-card-target="title"></h2></div>
       <button class="close-button", data-action="click->show-glass-card#close">&times;</button>
     </div>
     <div class="glass-body">
@@ -45,7 +45,7 @@
       </div>
       <div class="glass-text">
         <p data-show-glass-card-target="breed"></p>
-        <p data-show-glass-card-target="description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, facilis. Ipsa, odit, inventore consectetur non nulla deleniti tempore eius nobis corporis maxime omnis quibusdam totam?</p>
+        <p data-show-glass-card-target="description"></p>
       </div>
     </div>
   </div>

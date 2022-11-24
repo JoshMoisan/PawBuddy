@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="show-glass-card"
 export default class extends Controller {
-  static targets = ["card"]
+  static targets = ["card", "title", "dog-picture", "breed", "description"]
 
   connect() {
     console.log("SHOW GLASS TARGET CONNECTED")
@@ -11,26 +11,24 @@ export default class extends Controller {
 
   activate(event) {
     this.cardTarget.classList.add("active");
-    // event.currentTarget.dataset.name
-    // event.currentTarget.dataset.description
-    // event.currentTarget.dataset.breed
-    // event.currentTarget.dataset.dog_image
+
+    const title = event.currentTarget.dataset.name;
+    const description = event.currentTarget.dataset.description
+    const breed = event.currentTarget.dataset.breed
+    const dog_image = event.currentTarget.dataset.dog_image
 
 
 
-    const list = 
+    // this.title.innerHTML = "";
+    // this.description.innerHTML = "";
+    // this.breed.innerHTML = "";
+    // this.dog_image.innertHTML = "";
 
-    // card-Target -> Title
-    list.insertAdjacentHTML("beforeend", "Hello, my name is #{dataset.name}");
 
-    // card-Target -> description
-    list.insertAdjacentHTML("beforeend", "{dataset.description}");
-
-    // card-Target -> breed
-    list.insertAdjacentHTML("beforeend", "{dataset.breed}");
-
-    // card-Target -> dog-picture
-    list.insertAdjacentHTML("beforeend", "{dataset.dog_image}");
+    this.titleTarget.insertAdjacentHTML("beforeend", `Hello, my name is <strong>${title}</strong>`);
+    this.descriptionTarget.insertAdjacentHTML("beforeend", `${description}`);
+    this.breedTarget.insertAdjacentHTML("beforeend", `Breed : ${breed}`);
+    this.dog_imageTarget.insertAdjacentHTML("beforeend", `${dog_image}`);
   }
 
   close() {
