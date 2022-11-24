@@ -3,6 +3,13 @@ class DogsController < ApplicationController
 
   def index
     @dogs = policy_scope(Dog)
+    @dogs = Dog.all
+    @markers = @dogs.geocoded.map do |dog|
+      {
+        lat: dog.latitude,
+        lng: dog.longitude
+      }
+    end
   end
 
   def show

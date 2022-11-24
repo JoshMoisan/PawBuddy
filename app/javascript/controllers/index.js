@@ -6,3 +6,15 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+<<<<<<< Updated upstream
+=======
+
+import MapController from "./map_controller"
+application.register("map", MapController)
+
+import ShowGlassCardController from "./show_glass_card_controller"
+application.register("show-glass-card", ShowGlassCardController)
+
+import ShowMapController from "./show_map_controller"
+application.register("show-map", ShowMapController)
+>>>>>>> Stashed changes
