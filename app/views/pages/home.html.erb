@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" data-controller="show-glass-card">
   <%= render "devise/shared/banner" %>
 
   <div class="lower-nav-bar">
@@ -17,17 +17,37 @@
         <%= submit_tag "Search", class: "btn btn-ghost" %>
       </div>
       <div class="search-bar-element">
-        <button class="btn btn-ghost">Map</button>
+        <button class="btn btn-ghost", data-controller="show-map", data-action="click->show-map#activate">Map</button>
       </div>
         <% end %>
     </div>
   </div>
 
+
+<%# DOG CARD %>
     <ul>
       <li class="card-list"><% @dogs.each do |dog| %>
-        <%= link_to dog.name, dog_path(dog)  %>
+        <p data-action="click->show-glass-card#activate" data-name="<%= dog.name %>"><%= dog.name %></p>
       <% end %>
       </li>
-  </ul>
+    </ul>
+
+
+<%# GLASS CARD %>
+  <div class="glass-card" id="glass-card" data-show-glass-card-target="card">
+    <div class="glass-header">
+      <div class="glass-title"><h2 data-show-glass-card-target="title">Hello</h2></div>
+      <button class="close-button", data-action="click->show-glass-card#close">&times;</button>
+    </div>
+    <div class="glass-body">
+      <div class="glass-img">
+        <img data-show-glass-card-target="dog-picture" src="" alt="">
+      </div>
+      <div class="glass-text">
+        <p data-show-glass-card-target="breed"></p>
+        <p data-show-glass-card-target="description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, facilis. Ipsa, odit, inventore consectetur non nulla deleniti tempore eius nobis corporis maxime omnis quibusdam totam?</p>
+      </div>
+    </div>
+  </div>
 
 </div>

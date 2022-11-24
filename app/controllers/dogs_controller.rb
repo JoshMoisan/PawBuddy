@@ -3,7 +3,6 @@ class DogsController < ApplicationController
 
   def index
     @dogs = policy_scope(Dog)
-
   end
 
   def show
@@ -27,7 +26,7 @@ class DogsController < ApplicationController
     if @dog.save
       redirect_to dog_path(@dog)
     else
-    # render :new, status: :unprecessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
