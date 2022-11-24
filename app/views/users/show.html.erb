@@ -12,6 +12,8 @@
                   <div>
                     <li><i class="fa-solid fa-calendar-days"></i> From: <%= booking.start_date %></li>
                     <li><i class="fa-solid fa-calendar-days"></i> To: <%= booking.end_date %></li>
+                    <li><%= link_to "Accept", update_status_booking_path(booking, dog_id: booking.dog.id, status: "Accepted"), method: :patch %></li>
+                    <li><%= link_to "Reject", update_status_booking_path(booking, status: "Reject"), method: :patch %></li>
                   </div>
               </div>
             </div>
