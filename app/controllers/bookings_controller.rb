@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.user = current_user
     @booking.dog = @dog
-    @booking.status = "pending"
+    @booking.status = "Pending 🌕"
     if @booking.save
       redirect_to user_path(current_user)
     else
@@ -36,10 +36,10 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
-  def update_status
+  def update
     @booking = Booking.find(params[:id])
     authorize @booking
-    if @booking.update(booking_params)
+    if @booking.update(status: params[:status])
       redirect_to user_path(current_user)
     else
       redirect_to dog_path(@dog)
