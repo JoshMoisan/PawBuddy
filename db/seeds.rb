@@ -1,6 +1,12 @@
 require 'faker'
 require "open-uri"
 
+puts 'Destroying users and dogs 🌱'
+
+Booking.destroy_all
+Dog.destroy_all
+User.destroy_all
+
 puts 'Seeding db 🌱'
 
 5.times do
