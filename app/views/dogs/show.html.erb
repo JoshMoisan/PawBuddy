@@ -1,15 +1,18 @@
-<div class="container">
-  <div class="card-product">
-    <h1>Hi 👋🏻, my name is <strong><%= @dog.name %></strong></h1>
+
+  <div class="container card-product">
+    <h1> Hi 👋🏻, my name is <strong><%= @dog.name %></strong></h1>
 
 
     <div class="card-box">
-      <img src="https://thumbs.dreamstime.com/b/beautiful-happy-reddish-havanese-puppy-dog-sitting-frontal-looking-camera-isolated-white-background-46868560.jpg" alt="dog_image">
-
+      <% if @dog.photo.attached? %>
+        <%= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
       <div class="card-product-infos">
-        <p><%= @dog.description %></p>
-
-        <div class="d-flex justify-content-center items-center">
+        <div class="text">
+          <h5> Breed: <strong>Dalmatian</strong> </h5>
+          <p><%= @dog.description %></p>
+        </div>
+        <div class= "dist-buttons">
           <%= link_to "Back", root_path, class: "btn-ghost-black"  %>
 
           <% unless @dog.user == current_user %>
@@ -25,7 +28,5 @@
           <% end %>
         </div>
       </div>
-
     </div>
   </div>
-</div>

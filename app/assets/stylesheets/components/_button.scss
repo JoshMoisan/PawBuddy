@@ -19,7 +19,14 @@ font-weight: lighter;
 transition: opacity 0.3s ease;
 }
 
-.lower-nav-bar h2 {
+
+.btn-ghost:hover {
+  border: none;
+  background-color: #E5973A;
+  transition-duration: 0.5s;
+  }
+
+.search-bar h2 {
 color: white;
 font-weight: bold;
 }
@@ -30,10 +37,7 @@ text-decoration: none;
 color: white;
 }
 
-.btn-ghost:hover {
-border: none;
-transition-duration: 0.5s;
-}
+
 
 
 .btn-ghost-black {
@@ -44,4 +48,15 @@ transition-duration: 0.5s;
   font-weight: lighter;
   transition: opacity 0.3s ease;
   text-decoration: none;
+
   }
+
+  .btn-ghost-black:hover {
+    border: black;
+    background-color: #E5973A;
+    color: white;
+    transition-duration: 0.5s;
+    z-index: 10;
+
+
+    }
