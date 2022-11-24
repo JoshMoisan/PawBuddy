@@ -1,0 +1,19 @@
+.search-bar {
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+}
+
+.search-bar-element {
+  padding: 0 10px;
+}
+
+.search-bar-element .form-control {
+  padding: 8px 24px;
+  border-radius: 50px;
+}
+
+
+.search-bar-element i {
+  color: white;
+}
