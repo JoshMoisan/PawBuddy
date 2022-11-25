@@ -6,6 +6,10 @@ class DogPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    true
+  end
+
   def show?
     true
   end
@@ -29,5 +33,4 @@ class DogPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
-
 end
