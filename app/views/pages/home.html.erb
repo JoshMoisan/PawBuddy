@@ -27,7 +27,7 @@
 <%# DOG CARD %>
     <ul>
       <li class="card-list"><% @dogs.each do |dog| %>
-        <p data-action="click->show-glass-card#activate" data-name="<%= dog.name %>", data-description="<%= dog.description %>", data-breed="<%= dog.breed %>", data-dog-image="<%= dog.dog_image %>" ><%= dog.name %></p>
+        <p data-action="click->show-glass-card#activate" data-name="<%= dog.name %>", data-description="<%= dog.description %>", data-breed="<%= dog.breed %>", data-dog-image="<%= dog.dog_image %>", data-id="<%= dog.id %>" ><%= dog.name %></p>
       <% end %>
       </li>
     </ul>
@@ -46,6 +46,7 @@
       <div class="glass-text">
         <p data-show-glass-card-target="breed"></p>
         <p data-show-glass-card-target="description"></p>
+        <a href="" data-show-glass-card-target="doglink" class= "btn btn-ghost-black">Read More</a>
       </div>
     </div>
   </div>
