@@ -7,5 +7,12 @@ class PagesController < ApplicationController
     else
       @dogs = Dog.all
     end
+    @markers = @dogs.geocoded.map do |dog|
+      {
+        lat: dog.latitude,
+        lng: dog.longitude,
+        info_window: render_to_string(partial: "dogs/info_window", locals: {dog: dog})
+      }
+    end
   end
 end

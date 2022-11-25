@@ -18,3 +18,6 @@ application.register("show-glass-card", ShowGlassCardController)
 
 import ShowMapController from "./show_map_controller"
 application.register("show-map", ShowMapController)
+
+import ToggleController from "./toggle_controller"
+application.register("toggle", ToggleController)
