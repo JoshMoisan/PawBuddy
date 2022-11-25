@@ -1,0 +1,41 @@
+.user-info {
+  display: flex;
+  background-color:#EFC55D;
+  border-radius: 16px;
+  margin: 15px 0px;
+}
+
+.avatar-info img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  padding: 20px;
+}
+
+.text-info p{
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.text-info h1{
+  color: #E5973A;
+  font-size: 40px;
+  padding: 10px;
+  font-weight: bolder;
+}
+
+
+.activity {
+  text-align: right;
+  margin-bottom: none;
+  color: #E5973A;
+}
+
+
+.page-content {
+  background-color: #ABD3DC;
+  padding: 10px;
+  margin: 25px 0px;
+  border-radius: 16px;
+}

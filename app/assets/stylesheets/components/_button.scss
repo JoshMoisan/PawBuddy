@@ -11,30 +11,29 @@
 }
 
 .btn-ghost {
-color: white;
-border: 1px solid white;
-padding: 8px 24px;
-border-radius: 50px;
-font-weight: lighter;
-transition: opacity 0.3s ease;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: 500ms ease-in-out;
 }
 
 
 .btn-ghost:hover {
   border: 1px solid #E5973A;
   background-color: #E5973A;
-  transition-duration: 0.5s;
-  }
+}
 
 .search-bar h2 {
-color: white;
-font-weight: bold;
+  color: white;
+  font-weight: bold;
 }
 
 
 .btn-ghost a {
-text-decoration: none;
-color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .btn-ghost-black {
@@ -43,11 +42,11 @@ color: white;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  transition: opacity 0.3s ease;
+  transition: 500ms ease-in-out;
   text-decoration: none;
   max-width: 250px;
 
-  }
+}
 
 .btn-ghost-black:hover {
   border: 1px solid #E5973A;
@@ -56,9 +55,33 @@ color: white;
   transition-duration: 0.5s;
   z-index: 10;
 
-  }
+}
 
 .btn-ghost-black a {
   text-decoration: none;
   color: white;
-  }
+}
+
+.btn-ghost-orange {
+  border: 1px solid #EFC55D;
+  background-color: #EFC55D;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  text-decoration: none;
+  max-width: 250px;
+  transition: 500ms ease-in-out;
+
+}
+
+.btn-ghost-orange:hover {
+  border: 1px solid white;
+  background-color: none;
+  color: black;
+  z-index: 10;
+}
+
+.btn-ghost-orange a {
+  text-decoration: none;
+  color: black;
+}
