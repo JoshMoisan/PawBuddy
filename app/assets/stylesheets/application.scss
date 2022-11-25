@@ -6,15 +6,21 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
 
 // Your CSS partials
 @import "components/index";
 @import "components/search_bar";
 @import "components/glass_card";
+@import "components/map";
 
 
 // Your CSS pages
 @import "pages/home";
 @import "pages/index";
 @import "pages/show";
+<<<<<<< HEAD
 @import "pages/newbooking";
+=======
+@import "pages/user-profile";
+>>>>>>> c1735af25dab9e5018536586ff8b6321c164ec20

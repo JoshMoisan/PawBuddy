@@ -1,39 +1,41 @@
-<div class="container" data-controller="show-glass-card">
-  <%= render "devise/shared/banner" %>
+<div data-controller="toggle">
+  <div class="container" data-controller="show-glass-card">
+    <%= render "devise/shared/banner" %>
 
-  <div class="lower-nav-bar">
-    <h2>Pick your buddy !</h2>
+    <div class="lower-nav-bar">
+      <h2>Pick your buddy !</h2>
 
-    <div class="search-bar">
-    <div class="search-bar-element">
-      <%= form_with url: root_path, method: :get do%>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Type a name or a breed"
-        %>
+      <div class="search-bar">
+        <div class="search-bar-element d-flex">
+          <%= form_with url: root_path, method: :get, class: "d-flex" do%>
+            <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a name or a breed"
+            %>
+            <div class="search-bar-element">
+              <%= submit_tag "Search", class: "btn btn-ghost" %>
+            </div>
+            <div class="search-bar-element">
+              <button class="btn btn-ghost" data-action="click->toggle#switch">Map</button>
+            </div>
+          <% end %>
+        </div>
       </div>
-      <div class="search-bar-element">
-        <%= submit_tag "Search", class: "btn btn-ghost" %>
-      </div>
-      <div class="search-bar-element">
-        <button class="btn btn-ghost", data-controller="show-map", data-action="click->show-map#activate">Map</button>
-      </div>
-        <% end %>
     </div>
-  </div>
 
+  <div>
 
-<%# DOG CARD %>
-    <ul>
+  <%# DOG CARD %>
+    <ul data-toggle-target="dogs">
       <li class="card-list"><% @dogs.each do |dog| %>
-        <p data-action="click->show-glass-card#activate" data-name="<%= dog.name %>", data-description="<%= dog.description %>", data-breed="<%= dog.breed %>", data-dog-image="<%= dog.dog_image %>", data-id="<%= dog.id %>" ><%= dog.name %></p>
+        <p data-action="click->show-glass-card#activate" data-name="<%= dog.name %>", data-description="<%= dog.description %>", data-breed="<%= dog.breed %>", data-dog-image="<%= dog.dog_image %>" style="background-image: url('<%= cl_image_path dog.photo.key %>'); background-position: center; background-size: cover;"><%= dog.name %></p>
       <% end %>
       </li>
     </ul>
 
 
-<%# GLASS CARD %>
+  <%# GLASS CARD %>
   <div class="glass-card" id="glass-card" data-show-glass-card-target="card">
     <div class="glass-header">
       <div class="glass-title"><h2 data-show-glass-card-target="title"></h2></div>
@@ -51,4 +53,15 @@
     </div>
   </div>
 
+
+
+  <%# map %>
+
+
+  <div style="width: 100%; height: 600px;"
+    id='map'
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>

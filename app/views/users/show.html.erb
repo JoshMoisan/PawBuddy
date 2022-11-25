@@ -1,25 +1,47 @@
 <div class="container">
-  <h1>Hello <%= current_user.first_name %></h1>
-  <p>Here is your past activty</p>
+<div class="page-container">
+  <div class="user-info">
+    <div class="text-info">
+      <h1>Hello <%= current_user.first_name.capitalize %></h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde at in, dolorem voluptatum eveniet tenetur? Eligendi suscipit sapiente illo reprehenderit.</p>
+    </div>
+    <div class="avatar-info">
+      <img src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg">
+    </div>
+  </div>
+  <div class="activity">
+    <h3>Here is your past activty</h3>
+  </div>
 
-      <ul>
-        <% Booking.all.each do |booking| %>
-          <% if current_user == booking.user || current_user == booking.dog.user %>
+  <div class="page-content">
+    <ul>
+      <% Booking.all.each do |booking| %>
+        <% if current_user == booking.user || current_user == booking.dog.user %>
+          <div class="booking-info">
+            <div class="title-booking">
+              <li><h3><%= booking.dog.name.upcase %></h3></li>
+            </div>
             <div class="card-product">
-              <li><h3><%= booking.dog.name %></h3></li>
               <div class="card-box">
-                  <img src="https://thumbs.dreamstime.com/b/beautiful-happy-reddish-havanese-puppy-dog-sitting-frontal-looking-camera-isolated-white-background-46868560.jpg" alt="dog_image">
-                  <div>
-                    <li><i class="fa-solid fa-calendar-days"></i> From: <%= booking.start_date %></li>
-                    <li><i class="fa-solid fa-calendar-days"></i> To: <%= booking.end_date %></li>
-                    <% if booking.status == "Pending 🌕" && current_user == booking.dog.user %>
-                    <li><%= link_to "Accept", booking_path(booking, status: "Accepted 🟢"), data: {turbo_method: :patch} %></li>
-                    <li><%= link_to "Reject", booking_path(booking, status: "Rejected 🔴"), data: {turbo_method: :patch} %></li>
-                    <% end %>
-                    <%= booking.status %>
-                  </div>
+              <div>
+                <% if booking.dog.photo.attached? %>
+                  <%= cl_image_tag booking.dog.photo.key, height: 300, width: 400, crop: :fill, gravity: :face %>
+                <% end %>
+                </div>
+                <div>
+                  <li><i class="fa-solid fa-calendar-days"></i> From: <%= booking.start_date %></li>
+                  <li><i class="fa-solid fa-calendar-days"></i> To: <%= booking.end_date %></li>
+                  <% if booking.status == "Pending 🟡" && current_user == booking.dog.user %>
+                  <li><%= link_to "Accept", booking_path(booking, status: "Accepted 🟢"), data: {turbo_method: :patch}, class: "btn btn-ghost" %></li>
+                  <li><%= link_to "Reject", booking_path(booking, status: "Rejected 🔴"), data: {turbo_method: :patch}, class: "btn btn-ghost" %></li>
+                  <% end %>
+                  <%= booking.status %>
+                </div>
               </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
-      </ul>
+      <% end %>
+    </ul>
+  </div>
+</div>

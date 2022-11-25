@@ -4,15 +4,20 @@
 
 import { application } from "./application"
 
+import AddressAutocompleteController from "./address_autocomplete_controller"
+application.register("address-autocomplete", AddressAutocompleteController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
 
-
 import ShowGlassCardController from "./show_glass_card_controller"
 application.register("show-glass-card", ShowGlassCardController)
 
 import ShowMapController from "./show_map_controller"
 application.register("show-map", ShowMapController)
+
+import ToggleController from "./toggle_controller"
+application.register("toggle", ToggleController)
