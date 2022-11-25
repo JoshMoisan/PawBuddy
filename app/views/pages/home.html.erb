@@ -27,7 +27,7 @@
 <%# DOG CARD %>
     <ul>
       <li class="card-list"><% @dogs.each do |dog| %>
-        <p data-action="click->show-glass-card#activate" data-name="<%= dog.name %>", data-description="<%= dog.description %>", data-breed="<%= dog.breed %>", data-dog-image="<%= dog.dog_image %>" ><%= dog.name %></p>
+        <p data-action="click->show-glass-card#activate" data-name="<%= dog.name %>", data-description="<%= dog.description %>", data-breed="<%= dog.breed %>", data-dog-image="<%= dog.dog_image %>" style="background-image: url('<%= cl_image_path dog.photo.key %>'); background-position: center; background-size: cover;"><%= dog.name %></p>
       <% end %>
       </li>
     </ul>
